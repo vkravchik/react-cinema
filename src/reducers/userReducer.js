@@ -1,5 +1,5 @@
 import { GET_USER_LIST, REGISTER_USER } from "../constants/userConstants";
-import { REQUEST_PENDING } from "../constants/dataConstants";
+import { REQUEST_ERROR, REQUEST_PENDING } from "../constants/dataConstants";
 
 const initialState = {
   isLoading: false,
@@ -20,7 +20,8 @@ export const userReducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      data: action.payload
+      data: action.payload,
+      error: null
     }
   }
 
@@ -28,7 +29,16 @@ export const userReducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      data: action.payload
+      data: action.payload,
+      error: null
+    }
+  }
+
+  if (action.type === REQUEST_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      error: action.payload,
     }
   }
 

@@ -1,19 +1,18 @@
 import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import RegisterForm from "../components/RegisterForm";
-import { addUserAction } from "../actions/userAction";
-import { toggleLoading } from "../actions/dataAction";
+import { registerUserAction } from "../actions/userAction";
 
 const Register = (props) => {
 
-  const {isLoading, addUserAction, toggleLoading} = props;
+  const {isLoading, data, error, registerUserAction} = props;
 
   useEffect(() => {
 
   }, [isLoading]);
 
   const registerSubmit = (values) => {
-    addUserAction(values);
+    registerUserAction(values);
   };
 
   const getInitialValues = () => {
@@ -37,20 +36,29 @@ const Register = (props) => {
             initialValues={getInitialValues()}
           />
       }
+      {
+        !data.length && error &&
+        <div>
+          Something went wrong:
+          <br/>
+          {error.toString()}
+        </div>
+      }
     </Fragment>
   )
 };
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.dataReducer.isLoading
+    isLoading: state.userReducer.isLoading,
+    data: state.userReducer.data,
+    error: state.userReducer.error,
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    addUserAction: (user) => dispatch(addUserAction(user)),
-    toggleLoading: (isLoading) => dispatch(toggleLoading(isLoading))
+    registerUserAction: (user) => dispatch(registerUserAction(user))
   }
 };
 

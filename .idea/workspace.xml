@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78914f5a-4f61-4e3f-83fd-d99da70f88c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Validation/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/dataAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/filmActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/userAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Fields/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RegisterForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/dataConstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/filmConstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/userConstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Film.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/dataReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/userReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/dataAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/userAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/dataConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/dataConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/userConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/userConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/dataReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578651913124</updated>
-      <workItem from="1578651914632" duration="13360000" />
+      <workItem from="1578651914632" duration="16771000" />
     </task>
     <servers />
   </component>

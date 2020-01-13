@@ -1,8 +1,8 @@
-import { addUser, getUserList } from "../services/userService";
+import { registerUser, getUserList } from "../services/userService";
 import { GET_USER_LIST, REGISTER_USER } from "../constants/userConstants";
-import { REQUEST_PENDING } from "../constants/dataConstants";
+import { REQUEST_PENDING, REQUEST_ERROR } from "../constants/dataConstants";
 
-export const getUsersAction = () => (dispatch) => {
+export const getUserListAction = () => (dispatch) => {
   dispatch({type: REQUEST_PENDING});
   getUserList()
     .then(res => {
@@ -10,9 +10,18 @@ export const getUsersAction = () => (dispatch) => {
     });
 };
 
-export const addUserAction = (user) => (dispatch) => {
-  addUser(user)
+export const registerUserAction = (user) => (dispatch) => {
+  dispatch({type: REQUEST_PENDING});
+  registerUser(user)
     .then(res => {
+      console.log(res);
       dispatch({type: REGISTER_USER, payload: res.data});
     })
+    .catch(err => {
+      dispatch({type: REQUEST_ERROR, payload: err})
+    })
+};
+
+export const loginUserAction = (user) => (dispatch) => {
+
 };
