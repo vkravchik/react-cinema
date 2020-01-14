@@ -6,7 +6,8 @@ import { Redirect, Route } from "react-router-dom";
 
 const Register = (props) => {
 
-  const {isLoading, error, isLoggedIn, registerUserAction} = props;
+  const {registerUserAction} = props;
+  const {isLoading, error, isLoggedIn} = props.authProps;
 
   const registerSubmit = (values) => {
     registerUserAction(values);
@@ -61,9 +62,7 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.authReducer.isLoading,
-    error: state.authReducer.error,
-    isLoggedIn: state.authReducer.isLoggedIn,
+    authProps: state.authReducer
   }
 };
 

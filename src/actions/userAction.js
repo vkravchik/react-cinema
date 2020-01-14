@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import { registerUser, getUserList, loginUser } from "../services/userService";
 import { GET_USER_LIST, LOGIN_USER, REGISTER_USER } from "../constants/userConstants";
-import { REQUEST_PENDING, REQUEST_ERROR, REQUEST_SUCCESS } from "../constants/dataConstants";
+import { REQUEST_PENDING, REQUEST_ERROR, REQUEST_SUCCESS, JWT_KEY, USER_KEY } from "../constants/dataConstants";
 
 export const getUserListAction = () => (dispatch) => {
   dispatch({type: REQUEST_PENDING});
@@ -32,6 +32,10 @@ export const loginUserAction = (user) => (dispatch) => {
   loginUser(user)
     .then(res => {
       dispatch({type: REQUEST_SUCCESS});
+
+      localStorage.setItem(JWT_KEY, res.data);
+      localStorage.setItem(USER_KEY, JSON.stringify(jwt.decode(res.data)));
+
       dispatch({type: LOGIN_USER, payload: jwt.decode(res.data)});
     })
     .catch(err => {

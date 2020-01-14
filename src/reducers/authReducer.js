@@ -1,12 +1,16 @@
 import { LOGIN_USER, LOGOUT_USER, REGISTER_USER } from "../constants/userConstants";
-import { JWT_KEY, REQUEST_ERROR, REQUEST_PENDING, REQUEST_SUCCESS } from "../constants/dataConstants";
+import { JWT_KEY, REQUEST_ERROR, REQUEST_PENDING, REQUEST_SUCCESS, USER_KEY } from "../constants/dataConstants";
+
+const getStorageItem = (key) => (
+  localStorage.getItem(key)
+);
 
 const initialState = {
   isLoading: false,
-  token: localStorage.getItem(JWT_KEY) ? localStorage.getItem(JWT_KEY) : null,
-  user: {},
+  token: getStorageItem(JWT_KEY) ? getStorageItem(JWT_KEY) : null,
+  user: getStorageItem(USER_KEY) ? JSON.parse(getStorageItem(USER_KEY)) : {},
   error: null,
-  isLoggedIn: !!localStorage.getItem(JWT_KEY),
+  isLoggedIn: !!getStorageItem(JWT_KEY) && !!getStorageItem(USER_KEY),
 };
 
 export const authReducer = (state = initialState, action) => {
