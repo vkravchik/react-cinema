@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Auth from "./containers/Auth";
 import Register from "./containers/Register";
+import Film from "./containers/Film";
 
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
 
         <Route path='/registration'>
           <Register/>
+        </Route>
+
+        <Route path='/dashboard'>
+          <Film/>
         </Route>
       </Switch>
     </Router>

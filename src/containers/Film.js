@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Film = ({}) => {
+const Film = (props) => {
   return (
     <div>
-
+      Film page
     </div>
   )
 };

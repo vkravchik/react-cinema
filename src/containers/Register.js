@@ -9,7 +9,7 @@ const Register = (props) => {
 
   useEffect(() => {
 
-  }, [isLoading]);
+  }, []);
 
   const registerSubmit = (values) => {
     registerUserAction(values);

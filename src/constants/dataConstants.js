@@ -1,2 +1,4 @@
 export const REQUEST_PENDING = 'REQUEST_PENDING';
 export const REQUEST_ERROR = 'REQUEST_ERROR';
+
+export const STORAGE_USER_KEY = 'USER';

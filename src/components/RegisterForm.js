@@ -2,6 +2,7 @@ import React  from "react";
 import { Field, reduxForm } from "redux-form";
 import { myInput } from "./Fields";
 import { requiredInput, correctEmail, matchInput, passwordLength } from "../Validation";
+import { Link } from "react-router-dom";
 
 const RegisterForm = (props) => {
   const {handleSubmit} = props;
@@ -64,6 +65,9 @@ const RegisterForm = (props) => {
         <button type="submit">
           Submit
         </button>
+        <Link to='/login'>
+          Sign In
+        </Link>
       </div>
     </form>
   )
