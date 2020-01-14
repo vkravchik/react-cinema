@@ -19,6 +19,22 @@ const Auth = (props) => {
     }
   };
 
+  const canOpen = () => (
+    isLoggedIn && !error &&
+    <Route>
+      <Redirect to='/dashboard'/>
+    </Route>
+  );
+
+  const haveError = () => (
+    error &&
+    <div>
+      Something went wrong:
+      <br/>
+      {error.toString()}
+    </div>
+  );
+
   return (
     <Fragment>
       {
@@ -32,18 +48,10 @@ const Auth = (props) => {
           />
       }
       {
-        isLoggedIn && !error &&
-        <Route>
-          <Redirect to='/dashboard'/>
-        </Route>
+        canOpen()
       }
       {
-        error &&
-        <div>
-          Something went wrong:
-          <br/>
-          {error.toString()}
-        </div>
+        haveError()
       }
     </Fragment>
   )

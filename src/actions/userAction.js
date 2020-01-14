@@ -32,8 +32,7 @@ export const loginUserAction = (user) => (dispatch) => {
   loginUser(user)
     .then(res => {
       dispatch({type: REQUEST_SUCCESS});
-      const user = jwt.decode(res.data);
-      dispatch({type: LOGIN_USER, payload: user});
+      dispatch({type: LOGIN_USER, payload: jwt.decode(res.data)});
     })
     .catch(err => {
       dispatch({type: REQUEST_ERROR, payload: err})

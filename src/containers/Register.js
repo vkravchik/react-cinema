@@ -2,10 +2,11 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import RegisterForm from "../components/RegisterForm";
 import { registerUserAction } from "../actions/userAction";
+import { Redirect, Route } from "react-router-dom";
 
 const Register = (props) => {
 
-  const {isLoading, error, registerUserAction} = props;
+  const {isLoading, error, isLoggedIn, registerUserAction} = props;
 
   const registerSubmit = (values) => {
     registerUserAction(values);
@@ -20,6 +21,22 @@ const Register = (props) => {
     }
   };
 
+  const canOpen = () => (
+    isLoggedIn && !error &&
+    <Route>
+      <Redirect to='/dashboard'/>
+    </Route>
+  );
+
+  const haveError = () => (
+    error &&
+    <div>
+      Something went wrong:
+      <br/>
+      {error.toString()}
+    </div>
+  );
+
   return (
     <Fragment>
       {
@@ -33,12 +50,10 @@ const Register = (props) => {
           />
       }
       {
-        error &&
-        <div>
-          Something went wrong:
-          <br/>
-          {error.toString()}
-        </div>
+        canOpen()
+      }
+      {
+        haveError()
       }
     </Fragment>
   )
@@ -48,6 +63,7 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.authReducer.isLoading,
     error: state.authReducer.error,
+    isLoggedIn: state.authReducer.isLoggedIn,
   }
 };
 
