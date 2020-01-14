@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78914f5a-4f61-4e3f-83fd-d99da70f88c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/filmAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/filmReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/authService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/filmService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/filmActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/authAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/userAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilmList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilmList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/dataConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/dataConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/userConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/userConstants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Film.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578651913124</updated>
-      <workItem from="1578651914632" duration="28805000" />
+      <workItem from="1578651914632" duration="30506000" />
     </task>
     <servers />
   </component>

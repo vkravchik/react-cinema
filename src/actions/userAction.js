@@ -1,44 +1,15 @@
-import jwt from 'jsonwebtoken'
-import { registerUser, getUserList, loginUser } from "../services/userService";
-import { GET_USER_LIST, LOGIN_USER, REGISTER_USER } from "../constants/userConstants";
-import { REQUEST_PENDING, REQUEST_ERROR, REQUEST_SUCCESS, JWT_KEY, USER_KEY } from "../constants/dataConstants";
+import { getUserList } from "../services/userService";
+import { GET_USER_LIST } from "../constants/userConstants";
+import { REQUEST_ERROR, REQUEST_PENDING, REQUEST_SUCCESS } from "../constants/dataConstants";
 
 export const getUserListAction = () => (dispatch) => {
   dispatch({type: REQUEST_PENDING});
+
   getUserList()
     .then(res => {
       dispatch({type: REQUEST_SUCCESS});
-      dispatch({type: GET_USER_LIST, payload: res.data})
-    })
-    .catch(err => {
-      dispatch({type: REQUEST_ERROR, payload: err})
-    })
-};
-
-export const registerUserAction = (user) => (dispatch) => {
-  dispatch({type: REQUEST_PENDING});
-  registerUser(user)
-    .then(res => {
-      dispatch({type: REQUEST_SUCCESS});
-      dispatch({type: REGISTER_USER, payload: res.data});
-    })
-    .catch(err => {
-      dispatch({type: REQUEST_ERROR, payload: err})
-    })
-};
-
-export const loginUserAction = (user) => (dispatch) => {
-  dispatch({type: REQUEST_PENDING});
-  loginUser(user)
-    .then(res => {
-      dispatch({type: REQUEST_SUCCESS});
-
-      localStorage.setItem(JWT_KEY, res.data);
-      localStorage.setItem(USER_KEY, JSON.stringify(jwt.decode(res.data)));
-
-      dispatch({type: LOGIN_USER, payload: jwt.decode(res.data)});
-    })
-    .catch(err => {
-      dispatch({type: REQUEST_ERROR, payload: err})
+      dispatch({type: GET_USER_LIST, payload: res.data});
+    }, err => {
+      dispatch({type: REQUEST_ERROR, payload: err});
     })
 };

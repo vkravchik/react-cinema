@@ -9,7 +9,7 @@ const FilmList = (props) => {
       <ul>
         {
           data.map(el => (
-            <li key={el._id} onClick={() => onFilmClick(el)}>{el.username}</li>
+            <li key={el._id} onClick={() => onFilmClick(el)}>{el.name}</li>
           ))
         }
       </ul>

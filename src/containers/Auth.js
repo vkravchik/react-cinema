@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import AuthForm from "../components/AuthForm";
-import { loginUserAction } from "../actions/userAction";
+import { loginUserAction } from "../actions/authAction";
 import { Redirect, Route } from "react-router-dom";
 
 const Auth = (props) => {

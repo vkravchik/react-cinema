@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { BASE_URL } from "../constants/dataConstants";
 
-const collection = `users`;
+const collection = 'films';
 
-export const getUserList = async () => {
+export const getFilmList = async () => {
   return await axios.get(`${BASE_URL}/${collection}`);
 };

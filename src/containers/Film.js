@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getUserListAction } from "../actions/userAction";
 import FilmList from "../components/FilmList";
+import { getFilmListAction } from "../actions/filmAction";
 
 const Film = (props) => {
 
-  const {isLoading, isLoggedIn, data, getUserListAction} = props;
+  const {getFilmListAction} = props;
+  const {isLoading, isLoggedIn} = props.authProps;
+  const {data} = props.filmProps;
 
   useEffect(() => {
-    getUserListAction();
-  }, [getUserListAction]);
+    getFilmListAction();
+  }, [getFilmListAction]);
 
   const onFilmClick = (el) => {
     console.log(el);
@@ -36,16 +38,14 @@ const Film = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.authReducer.isLoading,
-    error: state.authReducer.error,
-    isLoggedIn: state.authReducer.isLoggedIn,
-    data: state.userReducer.data,
+    authProps: state.authReducer,
+    filmProps: state.filmReducer,
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getUserListAction: () => dispatch(getUserListAction())
+    getFilmListAction: () => dispatch(getFilmListAction())
   }
 };
 

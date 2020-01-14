@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import RegisterForm from "../components/RegisterForm";
-import { registerUserAction } from "../actions/userAction";
+import { registerUserAction } from "../actions/authAction";
 import { Redirect, Route } from "react-router-dom";
 
 const Register = (props) => {
