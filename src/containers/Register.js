@@ -1,15 +1,11 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import RegisterForm from "../components/RegisterForm";
 import { registerUserAction } from "../actions/userAction";
 
 const Register = (props) => {
 
-  const {isLoading, data, error, registerUserAction} = props;
-
-  useEffect(() => {
-
-  }, []);
+  const {isLoading, error, registerUserAction} = props;
 
   const registerSubmit = (values) => {
     registerUserAction(values);
@@ -37,7 +33,7 @@ const Register = (props) => {
           />
       }
       {
-        !data.length && error &&
+        error &&
         <div>
           Something went wrong:
           <br/>
@@ -50,9 +46,8 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.userReducer.isLoading,
-    data: state.userReducer.data,
-    error: state.userReducer.error,
+    isLoading: state.authReducer.isLoading,
+    error: state.authReducer.error,
   }
 };
 

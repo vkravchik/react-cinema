@@ -17,7 +17,6 @@ function App() {
         <Route path='/registration'>
           <Register/>
         </Route>
-
         <Route path='/dashboard'>
           <Film/>
         </Route>

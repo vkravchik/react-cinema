@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import AuthForm from "../components/AuthForm";
 import { loginUserAction } from "../actions/userAction";
@@ -6,7 +6,7 @@ import { Redirect, Route } from "react-router-dom";
 
 const Auth = (props) => {
 
-  const {isLoading, data, error, isLoggedIn, loginUserAction} = props;
+  const {isLoading, error, isLoggedIn, loginUserAction} = props;
 
   const authSubmit = (values) => {
     loginUserAction(values);
@@ -32,10 +32,18 @@ const Auth = (props) => {
           />
       }
       {
-        isLoggedIn &&
+        isLoggedIn && !error &&
         <Route>
           <Redirect to='/dashboard'/>
         </Route>
+      }
+      {
+        error &&
+        <div>
+          Something went wrong:
+          <br/>
+          {error.toString()}
+        </div>
       }
     </Fragment>
   )
@@ -43,16 +51,15 @@ const Auth = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.userReducer.isLoading,
-    data: state.userReducer.data,
-    error: state.userReducer.error,
-    isLoggedIn: state.userReducer.isLoggedIn,
+    isLoading: state.authReducer.isLoading,
+    error: state.authReducer.error,
+    isLoggedIn: state.authReducer.isLoggedIn,
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    loginUserAction: async (user) => dispatch(loginUserAction(user))
+    loginUserAction: (user) => dispatch(loginUserAction(user)),
   }
 };
 
